@@ -1,5 +1,7 @@
 # Multi-Channel Tech Helper — Camunda 8 AI Agent Example
 
+![process](./img/process.png)
+
 This repository is a small, self-contained example showing how a single AI agent
 running inside a Camunda 8 process can talk to a user through **more than one
 channel at the same time** — specifically through **Camunda Tasklist** (a web
