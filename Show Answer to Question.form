@@ -1,0 +1,32 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "80a5306"
+  },
+  "schemaVersion": 19,
+  "id": "show-answer-to-question-1hiz3ni",
+  "components": [
+    {
+      "text": "=answerToQuestion",
+      "type": "text",
+      "layout": {
+        "row": "Row_09jwdv8",
+        "columns": null
+      },
+      "id": "Field_1htpodh"
+    },
+    {
+      "label": "Followp Questoin",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1pcrom0",
+        "columns": null
+      },
+      "id": "Field_0782bpy",
+      "key": "followupQuestion"
+    }
+  ],
+  "type": "default"
+}

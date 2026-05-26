@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="8cca9cf" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.9.0">
+  <bpmn:process id="Multi-Channel-Agent" name="Multi-Channel-Agent" isExecutable="true">
+    <bpmn:sequenceFlow id="Flow_0jt0w1f" sourceRef="Activity_1jbvj8d" targetRef="Event_14an6hl" />
+    <bpmn:sequenceFlow id="Flow_0siqvmv" sourceRef="StartEvent_1" targetRef="Activity_1jbvj8d" />
+    <bpmn:startEvent id="StartEvent_1" name="Get Question About tech Stuff">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formId="get-question-about-tech-stuff-1ibjovl" />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_0siqvmv</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_14an6hl" name="Question About Tech Stuff Answered">
+      <bpmn:incoming>Flow_0jt0w1f</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:adHocSubProcess id="Activity_1jbvj8d" name="Tech Question Agent" zeebe:modelerTemplate="io.camunda.connectors.agenticai.aiagent.jobworker.v1" zeebe:modelerTemplateVersion="5" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNBNTZFRkYiLz4KPG1hc2sgaWQ9InBhdGgtMi1vdXRzaWRlLTFfMTg1XzYiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjQiIHk9IjQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iYmxhY2siPgo8cmVjdCBmaWxsPSJ3aGl0ZSIgeD0iNCIgeT0iNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuMDEwNSAxMi4wOTg3QzE4LjQ5IDEwLjU4OTQgMTcuMTU5NCA4LjEwODE0IDE2LjE3OTkgNi4wMTEwM0MxNi4xNTIgNi4wMDQ1MSAxNi4xMTc2IDYgMTYuMDc5NCA2QzE2LjA0MTEgNiAxNi4wMDY2IDYuMDA0NTEgMTUuOTc4OCA2LjAxMTA0QzE0Ljk5OTQgOC4xMDgxNCAxMy42Njk3IDEwLjU4ODkgMTIuMTQ4MSAxMi4wOTgxQzEwLjYyNjkgMTMuNjA3MSA4LjEyNTY4IDE0LjkyNjQgNi4wMTE1NyAxNS44OTgxQzYuMDA0NzQgMTUuOTI2MSA2IDE1Ljk2MTEgNiAxNkM2IDE2LjAzODcgNi4wMDQ2OCAxNi4wNzM2IDYuMDExNDQgMTYuMTAxNEM4LjEyNTE5IDE3LjA3MjkgMTAuNjI2MiAxOC4zOTE5IDEyLjE0NzcgMTkuOTAxNkMxMy42Njk3IDIxLjQxMDcgMTQuOTk5NiAyMy44OTIgMTUuOTc5MSAyNS45ODlDMTYuMDA2OCAyNS45OTU2IDE2LjA0MTEgMjYgMTYuMDc5MyAyNkMxNi4xMTc1IDI2IDE2LjE1MTkgMjUuOTk1NCAxNi4xNzk2IDI1Ljk4OUMxNy4xNTkxIDIzLjg5MiAxOC40ODg4IDIxLjQxMSAyMC4wMDk5IDE5LjkwMjFNMjAuMDA5OSAxOS45MDIxQzIxLjUyNTMgMTguMzk4NyAyMy45NDY1IDE3LjA2NjkgMjUuOTkxNSAxNi4wODI0QzI1Ljk5NjUgMTYuMDU5MyAyNiAxNi4wMzEgMjYgMTUuOTk5N0MyNiAxNS45Njg0IDI1Ljk5NjUgMTUuOTQwMyAyNS45OTE1IDE1LjkxNzFDMjMuOTQ3NCAxNC45MzI3IDIxLjUyNTkgMTMuNjAxIDIwLjAxMDUgMTIuMDk4NyIvPgo8L21hc2s+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjAuMDEwNSAxMi4wOTg3QzE4LjQ5IDEwLjU4OTQgMTcuMTU5NCA4LjEwODE0IDE2LjE3OTkgNi4wMTEwM0MxNi4xNTIgNi4wMDQ1MSAxNi4xMTc2IDYgMTYuMDc5NCA2QzE2LjA0MTEgNiAxNi4wMDY2IDYuMDA0NTEgMTUuOTc4OCA2LjAxMTA0QzE0Ljk5OTQgOC4xMDgxNCAxMy42Njk3IDEwLjU4ODkgMTIuMTQ4MSAxMi4wOTgxQzEwLjYyNjkgMTMuNjA3MSA4LjEyNTY4IDE0LjkyNjQgNi4wMTE1NyAxNS44OTgxQzYuMDA0NzQgMTUuOTI2MSA2IDE1Ljk2MTEgNiAxNkM2IDE2LjAzODcgNi4wMDQ2OCAxNi4wNzM2IDYuMDExNDQgMTYuMTAxNEM4LjEyNTE5IDE3LjA3MjkgMTAuNjI2MiAxOC4zOTE5IDEyLjE0NzcgMTkuOTAxNkMxMy42Njk3IDIxLjQxMDcgMTQuOTk5NiAyMy44OTIgMTUuOTc5MSAyNS45ODlDMTYuMDA2OCAyNS45OTU2IDE2LjA0MTEgMjYgMTYuMDc5MyAyNkMxNi4xMTc1IDI2IDE2LjE1MTkgMjUuOTk1NCAxNi4xNzk2IDI1Ljk4OUMxNy4xNTkxIDIzLjg5MiAxOC40ODg4IDIxLjQxMSAyMC4wMDk5IDE5LjkwMjFNMjAuMDA5OSAxOS45MDIxQzIxLjUyNTMgMTguMzk4NyAyMy45NDY1IDE3LjA2NjkgMjUuOTkxNSAxNi4wODI0QzI1Ljk5NjUgMTYuMDU5MyAyNiAxNi4wMzEgMjYgMTUuOTk5N0MyNiAxNS45Njg0IDI1Ljk5NjUgMTUuOTQwMyAyNS45OTE1IDE1LjkxNzFDMjMuOTQ3NCAxNC45MzI3IDIxLjUyNTkgMTMuNjAxIDIwLjAxMDUgMTIuMDk4NyIgZmlsbD0id2hpdGUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMC4wMTA1IDEyLjA5ODdDMTguNDkgMTAuNTg5NCAxNy4xNTk0IDguMTA4MTQgMTYuMTc5OSA2LjAxMTAzQzE2LjE1MiA2LjAwNDUxIDE2LjExNzYgNiAxNi4wNzk0IDZDMTYuMDQxMSA2IDE2LjAwNjYgNi4wMDQ1MSAxNS45Nzg4IDYuMDExMDRDMTQuOTk5NCA4LjEwODE0IDEzLjY2OTcgMTAuNTg4OSAxMi4xNDgxIDEyLjA5ODFDMTAuNjI2OSAxMy42MDcxIDguMTI1NjggMTQuOTI2NCA2LjAxMTU3IDE1Ljg5ODFDNi4wMDQ3NCAxNS45MjYxIDYgMTUuOTYxMSA2IDE2QzYgMTYuMDM4NyA2LjAwNDY4IDE2LjA3MzYgNi4wMTE0NCAxNi4xMDE0QzguMTI1MTkgMTcuMDcyOSAxMC42MjYyIDE4LjM5MTkgMTIuMTQ3NyAxOS45MDE2QzEzLjY2OTcgMjEuNDEwNyAxNC45OTk2IDIzLjg5MiAxNS45NzkxIDI1Ljk4OUMxNi4wMDY4IDI1Ljk5NTYgMTYuMDQxMSAyNiAxNi4wNzkzIDI2QzE2LjExNzUgMjYgMTYuMTUxOSAyNS45OTU0IDE2LjE3OTYgMjUuOTg5QzE3LjE1OTEgMjMuODkyIDE4LjQ4ODggMjEuNDExIDIwLjAwOTkgMTkuOTAyMU0yMC4wMDk5IDE5LjkwMjFDMjEuNTI1MyAxOC4zOTg3IDIzLjk0NjUgMTcuMDY2OSAyNS45OTE1IDE2LjA4MjRDMjUuOTk2NSAxNi4wNTkzIDI2IDE2LjAzMSAyNiAxNS45OTk3QzI2IDE1Ljk2ODQgMjUuOTk2NSAxNS45NDAzIDI1Ljk5MTUgMTUuOTE3MUMyMy45NDc0IDE0LjkzMjcgMjEuNTI1OSAxMy42MDEgMjAuMDEwNSAxMi4wOTg3IiBzdHJva2U9IiM0OTFEOEIiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgbWFzaz0idXJsKCNwYXRoLTItb3V0c2lkZS0xXzE4NV82KSIvPgo8L3N2Zz4K">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda.agenticai:aiagent-job-worker:1" retries="0" />
+        <zeebe:ioMapping>
+          <zeebe:input source="bedrock" target="provider.type" />
+          <zeebe:input source="{{secrets.AWS_REGION}}" target="provider.bedrock.region" />
+          <zeebe:input source="credentials" target="provider.bedrock.authentication.type" />
+          <zeebe:input source="{{secrets.AWS_ACCESS_KEY}}" target="provider.bedrock.authentication.accessKey" />
+          <zeebe:input source="{{secrets.AWS_SECRET_KEY}}" target="provider.bedrock.authentication.secretKey" />
+          <zeebe:input source="us.anthropic.claude-sonnet-4-6" target="provider.bedrock.model.model" />
+          <zeebe:input source="=&#34;You are **TaskAgent**, a helpful, generic chat agent that can handle a wide variety of customer requests using your own domain knowledge **and** any tools explicitly provided to you at runtime.&#10;&#10;Your goal is to provide an answer to questoins about our tech stuff. Make sure to answer any followup questoins that might also be asked.&#10;&#10;Any communication to the user must go throught he tools provided. &#10;&#10;If tools are provided, you should prefer them instead of guessing an answer. You can call the same tool multiple times by providing different input values. Don&#39;t guess any tools which were not explicitly configured. If no tool matches the request, try to generate an answer. If you&#39;re not able to find a good answer, return with a message stating why you&#39;re not able to.&#10;&#10;Wrap minimal, inspectable reasoning in *exactly* this XML template:&#10;&#10;&#60;thinking&#62;&#10;&#60;context&#62;…briefly state the customer’s need and current state…&#60;/context&#62;&#10;&#60;reflection&#62;…list candidate tools, justify which you will call next and why…&#60;/reflection&#62;&#10;&#60;/thinking&#62;&#10;&#10;Reveal **no** additional private reasoning outside these tags.&#34;" target="data.systemPrompt.prompt" />
+          <zeebe:input source="=string(question)" target="data.userPrompt.prompt" />
+          <zeebe:input source="=agent.context" target="agentContext" />
+          <zeebe:input source="in-process" target="data.memory.storage.type" />
+          <zeebe:input source="=20" target="data.memory.contextWindowSize" />
+          <zeebe:input source="=10" target="data.limits.maxModelCalls" />
+          <zeebe:input source="WAIT_FOR_TOOL_CALL_RESULTS" target="data.events.behavior" />
+          <zeebe:input source="text" target="data.response.format.type" />
+          <zeebe:input source="=false" target="data.response.format.parseJson" />
+          <zeebe:input source="=true" target="data.response.includeAssistantMessage" />
+          <zeebe:input source="=true" target="data.response.includeAgentContext" />
+          <zeebe:output source="=agent" target="agent" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders>
+          <zeebe:header key="elementTemplateVersion" value="5" />
+          <zeebe:header key="elementTemplateId" value="io.camunda.connectors.agenticai.aiagent.jobworker.v1" />
+          <zeebe:header key="retryBackoff" value="PT0S" />
+        </zeebe:taskHeaders>
+        <zeebe:adHoc outputCollection="toolCallResults" outputElement="={&#10;  id: toolCall._meta.id,&#10;  name: toolCall._meta.name,&#10;  content: toolCallResult&#10;}" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0siqvmv</bpmn:incoming>
+      <bpmn:incoming>Flow_1890yp5</bpmn:incoming>
+      <bpmn:outgoing>Flow_0jt0w1f</bpmn:outgoing>
+      <bpmn:serviceTask id="Activity_1wvern9" name="Get List of Tech Stuff" zeebe:modelerTemplate="io.camunda.connectors.HttpJson.v2" zeebe:modelerTemplateVersion="12" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE3LjAzMzUgOC45OTk5N0MxNy4wMzM1IDEzLjQ0NzUgMTMuNDI4MSAxNy4wNTI5IDguOTgwNjUgMTcuMDUyOUM0LjUzMzE2IDE3LjA1MjkgMC45Mjc3NjUgMTMuNDQ3NSAwLjkyNzc2NSA4Ljk5OTk3QzAuOTI3NzY1IDQuNTUyNDggNC41MzMxNiAwLjk0NzA4MyA4Ljk4MDY1IDAuOTQ3MDgzQzEzLjQyODEgMC45NDcwODMgMTcuMDMzNSA0LjU1MjQ4IDE3LjAzMzUgOC45OTk5N1oiIGZpbGw9IiM1MDU1NjIiLz4KPHBhdGggZD0iTTQuOTMxMjYgMTQuMTU3MUw2Ljc4MTA2IDMuNzE0NzFIMTAuMTM3NUMxMS4xOTE3IDMuNzE0NzEgMTEuOTgyNCAzLjk4MzIzIDEyLjUwOTUgNC41MjAyN0MxMy4wNDY1IDUuMDQ3MzYgMTMuMzE1IDUuNzMzNTggMTMuMzE1IDYuNTc4OTJDMTMuMzE1IDcuNDQ0MTQgMTMuMDcxNCA4LjE1NTIyIDEyLjU4NDEgOC43MTIxNUMxMi4xMDY3IDkuMjU5MTMgMTEuNDU1MyA5LjYzNzA1IDEwLjYyOTggOS44NDU5TDEyLjA2MTkgMTQuMTU3MUgxMC4zMzE1TDkuMDMzNjQgMTAuMDI0OUg3LjI0MzUxTDYuNTEyNTQgMTQuMTU3MUg0LjkzMTI2Wk03LjQ5NzExIDguNTkyODFIOS4yNDI0OEM5Ljk5ODMyIDguNTkyODEgMTAuNTkwMSA4LjQyMzc0IDExLjAxNzcgOC4wODU2MUMxMS40NTUzIDcuNzM3NTMgMTEuNjc0MSA3LjI2NTEzIDExLjY3NDEgNi42Njg0MkMxMS42NzQxIDYuMTkxMDYgMTEuNTI0OSA1LjgxODExIDExLjIyNjUgNS41NDk1OUMxMC45MjgyIDUuMjcxMTMgMTAuNDU1OCA1LjEzMTkgOS44MDkzNiA1LjEzMTlIOC4xMDg3NEw3LjQ5NzExIDguNTkyODFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K">
+        <bpmn:documentation>Use this tool in order to get a list of our tech stuff.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:http-json:1" retries="3" />
+          <zeebe:ioMapping>
+            <zeebe:input source="noAuth" target="authentication.type" />
+            <zeebe:input source="GET" target="method" />
+            <zeebe:input source="https://api.restful-api.dev/objects" target="url" />
+            <zeebe:input source="=false" target="storeResponse" />
+            <zeebe:input source="=20" target="connectionTimeoutInSeconds" />
+            <zeebe:input source="=20" target="readTimeoutInSeconds" />
+            <zeebe:input source="=false" target="ignoreNullValues" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="elementTemplateVersion" value="12" />
+            <zeebe:header key="elementTemplateId" value="io.camunda.connectors.HttpJson.v2" />
+            <zeebe:header key="resultVariable" value="toolCallResult" />
+            <zeebe:header key="retryBackoff" value="PT0S" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+      </bpmn:serviceTask>
+      <bpmn:userTask id="Activity_1lnicu6" name="Show Answer to Question">
+        <bpmn:documentation>Use this tool in order to show the asnwer to the user's question. Be aware you maybe also get followup questoins you should respond here to answer those questions</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:userTask />
+          <zeebe:formDefinition formId="show-answer-to-question-1hiz3ni" />
+          <zeebe:ioMapping>
+            <zeebe:input source="=fromAi(toolCall.answerToQuestion, &#34;This is the answer to the question the user has asked formated in markdown&#34;)" target="answerToQuestion" />
+            <zeebe:output source="={&#10;  &#34;followupQuestion&#34; : followupQuestion&#10;}" target="toolCallResult" />
+          </zeebe:ioMapping>
+        </bpmn:extensionElements>
+      </bpmn:userTask>
+      <bpmn:serviceTask id="Activity_07bfoi2" name="Show Answer in Slack" zeebe:modelerTemplate="io.camunda.connectors.Slack.v1" zeebe:modelerTemplateVersion="8" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI3IiBoZWlnaHQ9IjEyNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMjcuMiA4MGMwIDcuMy01LjkgMTMuMi0xMy4yIDEzLjJDNi43IDkzLjIuOCA4Ny4zLjggODBjMC03LjMgNS45LTEzLjIgMTMuMi0xMy4yaDEzLjJWODB6bTYuNiAwYzAtNy4zIDUuOS0xMy4yIDEzLjItMTMuMiA3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjJ2MzNjMCA3LjMtNS45IDEzLjItMTMuMiAxMy4yLTcuMyAwLTEzLjItNS45LTEzLjItMTMuMlY4MHoiIGZpbGw9IiNFMDFFNUEiLz4KICA8cGF0aCBkPSJNNDcgMjdjLTcuMyAwLTEzLjItNS45LTEzLjItMTMuMkMzMy44IDYuNSAzOS43LjYgNDcgLjZjNy4zIDAgMTMuMiA1LjkgMTMuMiAxMy4yVjI3SDQ3em0wIDYuN2M3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjIgMCA3LjMtNS45IDEzLjItMTMuMiAxMy4ySDEzLjlDNi42IDYwLjEuNyA1NC4yLjcgNDYuOWMwLTcuMyA1LjktMTMuMiAxMy4yLTEzLjJINDd6IiBmaWxsPSIjMzZDNUYwIi8+CiAgPHBhdGggZD0iTTk5LjkgNDYuOWMwLTcuMyA1LjktMTMuMiAxMy4yLTEzLjIgNy4zIDAgMTMuMiA1LjkgMTMuMiAxMy4yIDAgNy4zLTUuOSAxMy4yLTEzLjIgMTMuMkg5OS45VjQ2Ljl6bS02LjYgMGMwIDcuMy01LjkgMTMuMi0xMy4yIDEzLjItNy4zIDAtMTMuMi01LjktMTMuMi0xMy4yVjEzLjhDNjYuOSA2LjUgNzIuOC42IDgwLjEuNmM3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjJ2MzMuMXoiIGZpbGw9IiMyRUI2N0QiLz4KICA8cGF0aCBkPSJNODAuMSA5OS44YzcuMyAwIDEzLjIgNS45IDEzLjIgMTMuMiAwIDcuMy01LjkgMTMuMi0xMy4yIDEzLjItNy4zIDAtMTMuMi01LjktMTMuMi0xMy4yVjk5LjhoMTMuMnptMC02LjZjLTcuMyAwLTEzLjItNS45LTEzLjItMTMuMiAwLTcuMyA1LjktMTMuMiAxMy4yLTEzLjJoMzMuMWM3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjIgMCA3LjMtNS45IDEzLjItMTMuMiAxMy4ySDgwLjF6IiBmaWxsPSIjRUNCMjJFIi8+Cjwvc3ZnPgo=">
+        <bpmn:documentation>Use this tool in order to send a response to a user who is communicating over slack. Remeber that slack has specific format requirements.
+When formatting messages for Slack, use Slack's mrkdwn syntax (NOT standard markdown):
+
+- Bold: *single asterisks* (not **double**)
+- Italic: _underscores_ (not *asterisks*)
+- Strikethrough: ~tildes~
+- Inline code: `backticks`
+- Code blocks: ```triple backticks``` (no language hint — Slack ignores it)
+- Blockquote: &gt; at the start of the line
+- Bullet lists: use • or - at the start of a line (Slack does not render `*` as bullets)
+- Numbered lists: write "1. ", "2. " manually — Slack has no auto-numbering
+- Links: &lt;https://example.com|link text&gt; (angle brackets, pipe-separated)
+- User mention: &lt;@USER_ID&gt;
+- Channel mention: &lt;#CHANNEL_ID&gt;
+- Line breaks: use real newlines (\n), not &lt;br&gt;
+
+Do NOT use:
+- Markdown headings (#, ##, ###) — they render as literal text
+- Tables — Slack does not support them; use aligned text or a bulleted list
+- Nested lists with deep indentation — rendering is unreliable
+- HTML tags
+
+Keep messages concise. Slack is a conversational medium, not a document. Prefer short paragraphs separated by blank lines over long blocks of text.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:slack:1" retries="3" />
+          <zeebe:ioMapping>
+            <zeebe:input source="{{secrets.SLACK_HAWK_OATH_TOKEN}}" target="token" />
+            <zeebe:input source="chat.postMessage" target="method" />
+            <zeebe:input source="plainText" target="data.messageType" />
+            <zeebe:input source="=fromAi(toolCall.answerToQuestion, &#34;This is the answer to the question the user has asked.&#34;)" target="data.text" />
+            <zeebe:input source="=slackRequest.channelId" target="data.channel" />
+            <zeebe:input source="=slackRequest.threadTs" target="data.thread" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="elementTemplateVersion" value="8" />
+            <zeebe:header key="elementTemplateId" value="io.camunda.connectors.Slack.v1" />
+            <zeebe:header key="resultVariable" value="responseToPost" />
+            <zeebe:header key="retryBackoff" value="PT0S" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+        <bpmn:outgoing>Flow_1xv0jz4</bpmn:outgoing>
+      </bpmn:serviceTask>
+      <bpmn:intermediateCatchEvent id="Event_0vckndl" name="Response" zeebe:modelerTemplate="io.camunda.connectors.inbound.Slack.IntermediateCatchEvent.v1" zeebe:modelerTemplateVersion="7" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI3IiBoZWlnaHQ9IjEyNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMjcuMiA4MGMwIDcuMy01LjkgMTMuMi0xMy4yIDEzLjJDNi43IDkzLjIuOCA4Ny4zLjggODBjMC03LjMgNS45LTEzLjIgMTMuMi0xMy4yaDEzLjJWODB6bTYuNiAwYzAtNy4zIDUuOS0xMy4yIDEzLjItMTMuMiA3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjJ2MzNjMCA3LjMtNS45IDEzLjItMTMuMiAxMy4yLTcuMyAwLTEzLjItNS45LTEzLjItMTMuMlY4MHoiIGZpbGw9IiNFMDFFNUEiLz4KICA8cGF0aCBkPSJNNDcgMjdjLTcuMyAwLTEzLjItNS45LTEzLjItMTMuMkMzMy44IDYuNSAzOS43LjYgNDcgLjZjNy4zIDAgMTMuMiA1LjkgMTMuMiAxMy4yVjI3SDQ3em0wIDYuN2M3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjIgMCA3LjMtNS45IDEzLjItMTMuMiAxMy4ySDEzLjlDNi42IDYwLjEuNyA1NC4yLjcgNDYuOWMwLTcuMyA1LjktMTMuMiAxMy4yLTEzLjJINDd6IiBmaWxsPSIjMzZDNUYwIi8+CiAgPHBhdGggZD0iTTk5LjkgNDYuOWMwLTcuMyA1LjktMTMuMiAxMy4yLTEzLjIgNy4zIDAgMTMuMiA1LjkgMTMuMiAxMy4yIDAgNy4zLTUuOSAxMy4yLTEzLjIgMTMuMkg5OS45VjQ2Ljl6bS02LjYgMGMwIDcuMy01LjkgMTMuMi0xMy4yIDEzLjItNy4zIDAtMTMuMi01LjktMTMuMi0xMy4yVjEzLjhDNjYuOSA2LjUgNzIuOC42IDgwLjEuNmM3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjJ2MzMuMXoiIGZpbGw9IiMyRUI2N0QiLz4KICA8cGF0aCBkPSJNODAuMSA5OS44YzcuMyAwIDEzLjIgNS45IDEzLjIgMTMuMiAwIDcuMy01LjkgMTMuMi0xMy4yIDEzLjItNy4zIDAtMTMuMi01LjktMTMuMi0xMy4yVjk5LjhoMTMuMnptMC02LjZjLTcuMyAwLTEzLjItNS45LTEzLjItMTMuMiAwLTcuMyA1LjktMTMuMiAxMy4yLTEzLjJoMzMuMWM3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjIgMCA3LjMtNS45IDEzLjItMTMuMiAxMy4ySDgwLjF6IiBmaWxsPSIjRUNCMjJFIi8+Cjwvc3ZnPgo=">
+        <bpmn:extensionElements>
+          <zeebe:properties>
+            <zeebe:property name="inbound.type" value="io.camunda:slack-webhook:1" />
+            <zeebe:property name="inbound.context" value="{{secrets.SLACK_HAWK_WEBHOOK_ID}}" />
+            <zeebe:property name="inbound.slackSigningSecret" value="{{secrets.SLACK_HAWK_SIGINING_SECRET}}" />
+            <zeebe:property name="inbound.verificationExpression" value="=if (body.type != null and body.type = &#34;url_verification&#34;) then {body:{&#34;challenge&#34;:body.challenge}, statusCode: 200} else null" />
+            <zeebe:property name="activationCondition" value="=request.body.event.type = &#34;message&#34;&#10; and request.body.event.thread_ts != null&#10; and request.body.event.client_msg_id != null&#10; and request.body.event.bot_id = null" />
+            <zeebe:property name="consumeUnmatchedEvents" value="false" />
+            <zeebe:property name="correlationKeyExpression" value="=string(request.body.event.thread_ts)" />
+            <zeebe:property name="deduplicationModeManualFlag" value="false" />
+            <zeebe:property name="deduplicationMode" value="AUTO" />
+            <zeebe:property name="resultVariable" value="slackResponsInFull" />
+            <zeebe:property name="resultExpression" value="={&#10;  &#34;toolCallResult&#34; : {&#10;    &#34;followUpText&#34;: request.body.event.text,&#10;    &#34;followUpUser&#34;: request.body.event.user&#10;  }&#10;}" />
+          </zeebe:properties>
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_03c6lz8</bpmn:incoming>
+        <bpmn:messageEventDefinition id="MessageEventDefinition_094u5ql" messageRef="Message_1ej24bd" />
+      </bpmn:intermediateCatchEvent>
+      <bpmn:sequenceFlow id="Flow_1xv0jz4" sourceRef="Activity_07bfoi2" targetRef="Gateway_000w0oi" />
+      <bpmn:sequenceFlow id="Flow_03c6lz8" sourceRef="Gateway_000w0oi" targetRef="Event_0vckndl" />
+      <bpmn:eventBasedGateway id="Gateway_000w0oi">
+        <bpmn:incoming>Flow_1xv0jz4</bpmn:incoming>
+        <bpmn:outgoing>Flow_03c6lz8</bpmn:outgoing>
+        <bpmn:outgoing>Flow_1p8hauj</bpmn:outgoing>
+      </bpmn:eventBasedGateway>
+      <bpmn:intermediateCatchEvent id="Event_038j3bw" name="Wait 5 Mins for a response">
+        <bpmn:extensionElements>
+          <zeebe:ioMapping>
+            <zeebe:output source="={&#10;  &#34;SystemMessage&#34; : &#34;Waited for 5 mins, but there&#39;s no response.&#34;&#10;}" target="toolCallResult" />
+          </zeebe:ioMapping>
+        </bpmn:extensionElements>
+        <bpmn:incoming>Flow_1p8hauj</bpmn:incoming>
+        <bpmn:timerEventDefinition id="TimerEventDefinition_0piytff">
+          <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT4M</bpmn:timeDuration>
+        </bpmn:timerEventDefinition>
+      </bpmn:intermediateCatchEvent>
+      <bpmn:sequenceFlow id="Flow_1p8hauj" sourceRef="Gateway_000w0oi" targetRef="Event_038j3bw" />
+      <bpmn:boundaryEvent id="Event_11b0w9b" name="Wait 5 Mins for a response" attachedToRef="Activity_1lnicu6">
+        <bpmn:extensionElements>
+          <zeebe:ioMapping>
+            <zeebe:output source="={&#10;  &#34;SystemMessage&#34; : &#34;Waited for 5 mins, but there&#39;s no response.&#34;&#10;}" target="toolCallResult" />
+          </zeebe:ioMapping>
+        </bpmn:extensionElements>
+        <bpmn:timerEventDefinition id="TimerEventDefinition_01nll7p">
+          <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT5M</bpmn:timeDuration>
+        </bpmn:timerEventDefinition>
+      </bpmn:boundaryEvent>
+      <bpmn:serviceTask id="Activity_1ftg0az" name="Query Company Information" zeebe:modelerTemplate="Template_148eei5" zeebe:modelerTemplateVersion="1" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiBmaWxsPSJ3aGl0ZSIgZmlsbC1vcGFjaXR5PSIwLjAxIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6bXVsdGlwbHkiLz4KPHBhdGggZD0iTTI1NS45OTkgMTM2LjcwMkMxOTMuMzE4IDEzNi43MDIgMTI1Ljg1NSAxNTEuNDg1IDEyNS44NTUgMTgzLjkzM1YzOTYuNDc1QzEyNS44NTUgNDI4LjkyMyAxOTMuMzE4IDQ0My43MDcgMjU1Ljk5OSA0NDMuNzA3QzMxOC42NzkgNDQzLjcwNyAzODYuMTQyIDQyOC45MjMgMzg2LjE0MiAzOTYuNDc1VjE4My45MzNDMzg2LjE0MiAxNTEuNDg1IDMxOC42NzkgMTM2LjcwMiAyNTUuOTk5IDEzNi43MDJaTTI1NS45OTkgMTYwLjMxOEMzMjQuNTkxIDE2MC4zMTggMzYwLjA1MyAxNzcuMjUxIDM2Mi40NDIgMTgzLjkzM0MzNjAuMDUzIDE5MC42MTUgMzI0LjU5MSAyMDcuNTQ5IDI1NS45OTkgMjA3LjU0OUMxODYuODg5IDIwNy41NDkgMTUxLjQxOCAxOTAuMzYyIDE0OS41MTggMTg0LjE0MVYxODQuMDgzQzE1MS40MTggMTc3LjUwNSAxODYuODg5IDE2MC4zMTggMjU1Ljk5OSAxNjAuMzE4Wk0xNDkuNTE4IDIxMi41OTlDMTc0LjY5NCAyMjUuMjAzIDIxNi4yNzcgMjMxLjE2NSAyNTUuOTk5IDIzMS4xNjVDMjk1LjcyMSAyMzEuMTY1IDMzNy4zMDQgMjI1LjIwMyAzNjIuNDggMjEyLjU5OVYyNTQuNjMxQzM2MC41OCAyNjEuMjA5IDMyNS4xMDggMjc4LjM5NiAyNTUuOTk5IDI3OC4zOTZDMTg2Ljc4NSAyNzguMzk2IDE1MS4zMDMgMjYxLjE1NyAxNDkuNTE4IDI1NC43ODFWMjEyLjU5OVpNMTQ5LjUxOCAyODMuNDQ3QzE3NC42OTQgMjk2LjA1IDIxNi4yNzcgMzAyLjAxMiAyNTUuOTk5IDMwMi4wMTJDMjk1LjcyMSAzMDIuMDEyIDMzNy4zMDQgMjk2LjA1IDM2Mi40OCAyODMuNDQ3VjMyNS40NzhDMzYwLjU4IDMzMi4wNTYgMzI1LjEwOCAzNDkuMjQ0IDI1NS45OTkgMzQ5LjI0NEMxODYuNzg1IDM0OS4yNDQgMTUxLjMwMyAzMzIuMDA0IDE0OS41MTggMzI1LjYyOFYyODMuNDQ3Wk0yNTUuOTk5IDQyMC4wOTFDMTg2Ljc4NSA0MjAuMDkxIDE1MS4zMDMgNDAyLjg1MSAxNDkuNTE4IDM5Ni40NzVWMzU0LjI5NEMxNzQuNjk0IDM2Ni44OTggMjE2LjI3NyAzNzIuODU5IDI1NS45OTkgMzcyLjg1OUMyOTUuNzIxIDM3Mi44NTkgMzM3LjMwNCAzNjYuODk4IDM2Mi40OCAzNTQuMjk0VjM5Ni4zMjVDMzYwLjU4IDQwMi45MDMgMzI1LjEwOCA0MjAuMDkxIDI1NS45OTkgNDIwLjA5MVoiIGZpbGw9IiNGQzVEMEQiIHN0cm9rZT0iI0ZDNUQwRCIgc3Ryb2tlLXdpZHRoPSI2LjY3NDAyIi8+CjxwYXRoIGQ9Ik0zODcuODYgMzk5Ljg4M0wzNzQuNTMxIDQxMy4yMTFMNDQ2Ljg4NiA0ODUuNTY2SDM4NC4wNTJWNTA0LjYwN0g0NzkuMjU2VjQwOS40MDNINDYwLjIxNVY0NzIuMjM4TDM4Ny44NiAzOTkuODgzWiIgZmlsbD0iI0ZDNUQwRCIgc3Ryb2tlPSIjRkM1RDBEIiBzdHJva2Utd2lkdGg9IjguMzQyNTIiLz4KPHBhdGggZD0iTTEyNC4xMzggMzk5Ljg4M0wxMzcuNDY3IDQxMy4yMTFMNjUuMTExNiA0ODUuNTY2SDEyNy45NDZWNTA0LjYwN0gzMi43NDIyVjQwOS40MDNINTEuNzgzVjQ3Mi4yMzhMMTI0LjEzOCAzOTkuODgzWiIgZmlsbD0iI0ZDNUQwRCIgc3Ryb2tlPSIjRkM1RDBEIiBzdHJva2Utd2lkdGg9IjguMzQyNTIiLz4KPHBhdGggZD0iTTI0Ni41NzUgMTQ2LjA3MUgyNjUuNDI1VjQzLjc0NTNMMzA5Ljg1NiA4OC4xNzYxTDMyMy4zMTkgNzQuNzEyMkwyNTYgNy4zOTI4MkwxODguNjgxIDc0LjcxMjJMMjAyLjE0NCA4OC4xNzYxTDI0Ni41NzUgNDMuNzQ1M1YxNDYuMDcxWiIgZmlsbD0iI0ZDNUQwRCIgc3Ryb2tlPSIjRkM1RDBEIiBzdHJva2Utd2lkdGg9IjguMzQyNTIiLz4KPC9zdmc+Cg==">
+        <bpmn:documentation>Use this tool in order to get any information on policy or company or product specific questions you might have.</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:taskDefinition type="io.camunda:embeddings-vector-database:1" retries="0" />
+          <zeebe:ioMapping>
+            <zeebe:input source="retrieveDocumentOperation" target="vectorDatabaseConnectorOperation.operationType" />
+            <zeebe:input source="=fromAi(toolCall.query, &#34;This is the query you&#39;re making to the vector database&#34;)" target="vectorDatabaseConnectorOperation.query" />
+            <zeebe:input source="=5" target="vectorDatabaseConnectorOperation.documentLimit" />
+            <zeebe:input source="bedrockModelProvider" target="embeddingModelProvider.modelProvider" />
+            <zeebe:input source="{{secrets.AWS_ACCESS_KEY}}" target="embeddingModelProvider.bedrock.accessKey" />
+            <zeebe:input source="{{secrets.AWS_SECRET_KEY}}" target="embeddingModelProvider.bedrock.secretKey" />
+            <zeebe:input source="{{secrets.AWS_REGION}}" target="embeddingModelProvider.bedrock.region" />
+            <zeebe:input source="TitanEmbedTextV2" target="embeddingModelProvider.bedrock.modelName" />
+            <zeebe:input source="D1024" target="embeddingModelProvider.bedrock.dimensions" />
+            <zeebe:input source="=false" target="embeddingModelProvider.bedrock.normalize" />
+            <zeebe:input source="=3" target="embeddingModelProvider.bedrock.maxRetries" />
+            <zeebe:input source="amazonManagedOpenSearchStore" target="vectorStore.storeType" />
+            <zeebe:input source="{{secrets.AWS_VECTOR_ACCESS}}" target="vectorStore.amazonManagedOpensearch.accessKey" />
+            <zeebe:input source="{{secrets.AWS_VECTOR_SECRET}}" target="vectorStore.amazonManagedOpensearch.secretKey" />
+            <zeebe:input source="{{secrets.AWS_LONGTERM_MEM}}" target="vectorStore.amazonManagedOpensearch.serverUrl" />
+            <zeebe:input source="{{secrets.AWS_REGION}}" target="vectorStore.amazonManagedOpensearch.region" />
+            <zeebe:input source="=&#34;tech-stuff-knowagebase&#34;" target="vectorStore.amazonManagedOpensearch.indexName" />
+          </zeebe:ioMapping>
+          <zeebe:taskHeaders>
+            <zeebe:header key="elementTemplateVersion" value="2" />
+            <zeebe:header key="elementTemplateId" value="io.camunda.connectors.EmbeddingsVectorDB.v1" />
+            <zeebe:header key="resultVariable" value="toolCallResult" />
+            <zeebe:header key="errorExpression" value="=if contains(error.message, &#34;index_not_found&#34;) then bpmnError(&#34;index_not_found&#34;, &#34;The index does not exist&#34;) else null" />
+            <zeebe:header key="retryBackoff" value="PT0S" />
+          </zeebe:taskHeaders>
+        </bpmn:extensionElements>
+      </bpmn:serviceTask>
+      <bpmn:boundaryEvent id="Event_13nfdh6" attachedToRef="Activity_1ftg0az">
+        <bpmn:extensionElements>
+          <zeebe:ioMapping>
+            <zeebe:output source="={&#10;  &#34;searchResult&#34; :&#34;Nothing was found&#34;&#10;}" target="toolCallResult" />
+          </zeebe:ioMapping>
+        </bpmn:extensionElements>
+        <bpmn:errorEventDefinition id="ErrorEventDefinition_0pwwn88" />
+      </bpmn:boundaryEvent>
+      <bpmn:scriptTask id="Activity_1wck987" name="Get the Current Time and date">
+        <bpmn:documentation>Use this tool to find out the current time and date</bpmn:documentation>
+        <bpmn:extensionElements>
+          <zeebe:script expression="=now()" resultVariable="timeAndDate" />
+          <zeebe:ioMapping>
+            <zeebe:output source="={&#10;  &#34;TheTimeAndDate&#34; : timeAndDate&#10;}" target="toolCallResult" />
+          </zeebe:ioMapping>
+        </bpmn:extensionElements>
+      </bpmn:scriptTask>
+    </bpmn:adHocSubProcess>
+    <bpmn:startEvent id="Event_0kr9ms2" name="Info From Slack" zeebe:modelerTemplate="io.camunda.connectors.inbound.Slack.MessageStartEvent.v1" zeebe:modelerTemplateVersion="7" zeebe:modelerTemplateIcon="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI3IiBoZWlnaHQ9IjEyNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cGF0aCBkPSJNMjcuMiA4MGMwIDcuMy01LjkgMTMuMi0xMy4yIDEzLjJDNi43IDkzLjIuOCA4Ny4zLjggODBjMC03LjMgNS45LTEzLjIgMTMuMi0xMy4yaDEzLjJWODB6bTYuNiAwYzAtNy4zIDUuOS0xMy4yIDEzLjItMTMuMiA3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjJ2MzNjMCA3LjMtNS45IDEzLjItMTMuMiAxMy4yLTcuMyAwLTEzLjItNS45LTEzLjItMTMuMlY4MHoiIGZpbGw9IiNFMDFFNUEiLz4KICA8cGF0aCBkPSJNNDcgMjdjLTcuMyAwLTEzLjItNS45LTEzLjItMTMuMkMzMy44IDYuNSAzOS43LjYgNDcgLjZjNy4zIDAgMTMuMiA1LjkgMTMuMiAxMy4yVjI3SDQ3em0wIDYuN2M3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjIgMCA3LjMtNS45IDEzLjItMTMuMiAxMy4ySDEzLjlDNi42IDYwLjEuNyA1NC4yLjcgNDYuOWMwLTcuMyA1LjktMTMuMiAxMy4yLTEzLjJINDd6IiBmaWxsPSIjMzZDNUYwIi8+CiAgPHBhdGggZD0iTTk5LjkgNDYuOWMwLTcuMyA1LjktMTMuMiAxMy4yLTEzLjIgNy4zIDAgMTMuMiA1LjkgMTMuMiAxMy4yIDAgNy4zLTUuOSAxMy4yLTEzLjIgMTMuMkg5OS45VjQ2Ljl6bS02LjYgMGMwIDcuMy01LjkgMTMuMi0xMy4yIDEzLjItNy4zIDAtMTMuMi01LjktMTMuMi0xMy4yVjEzLjhDNjYuOSA2LjUgNzIuOC42IDgwLjEuNmM3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjJ2MzMuMXoiIGZpbGw9IiMyRUI2N0QiLz4KICA8cGF0aCBkPSJNODAuMSA5OS44YzcuMyAwIDEzLjIgNS45IDEzLjIgMTMuMiAwIDcuMy01LjkgMTMuMi0xMy4yIDEzLjItNy4zIDAtMTMuMi01LjktMTMuMi0xMy4yVjk5LjhoMTMuMnptMC02LjZjLTcuMyAwLTEzLjItNS45LTEzLjItMTMuMiAwLTcuMyA1LjktMTMuMiAxMy4yLTEzLjJoMzMuMWM3LjMgMCAxMy4yIDUuOSAxMy4yIDEzLjIgMCA3LjMtNS45IDEzLjItMTMuMiAxMy4ySDgwLjF6IiBmaWxsPSIjRUNCMjJFIi8+Cjwvc3ZnPgo=">
+      <bpmn:extensionElements>
+        <zeebe:properties>
+          <zeebe:property name="inbound.type" value="io.camunda:slack-webhook:1" />
+          <zeebe:property name="inbound.context" value="{{secrets.SLACK_HAWK_WEBHOOK_ID}}" />
+          <zeebe:property name="inbound.slackSigningSecret" value="{{secrets.SLACK_HAWK_SIGINING_SECRET}}" />
+          <zeebe:property name="inbound.verificationExpression" value="=if (body.type != null and body.type = &#34;url_verification&#34;) then {body:{&#34;challenge&#34;:body.challenge}, statusCode: 200} else null" />
+          <zeebe:property name="activationCondition" value="=request.body.event.type = &#34;app_mention&#34;&#10;and not(is defined(request.headers.x-slack-retry-num))" />
+          <zeebe:property name="consumeUnmatchedEvents" value="false" />
+          <zeebe:property name="correlationRequired" value="notRequired" />
+          <zeebe:property name="deduplicationModeManualFlag" value="false" />
+          <zeebe:property name="deduplicationMode" value="AUTO" />
+          <zeebe:property name="resultVariable" value="question" />
+          <zeebe:property name="resultExpression" value="={&#10;  &#34;slackRequest&#34; : {&#10;    &#34;senderId&#34;: request.body.event.user,&#10;    &#34;channelId&#34;: request.body.event.channel,&#10;    &#34;threadTs&#34;: request.body.event.ts,&#10;    &#34;text&#34;: request.body.event.text&#10;  }&#10;}" />
+        </zeebe:properties>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_1890yp5</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0bwlass" messageRef="Message_1frfkks" />
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_1890yp5" sourceRef="Event_0kr9ms2" targetRef="Activity_1jbvj8d" />
+  </bpmn:process>
+  <bpmn:message id="Message_1frfkks" name="18bce8fd-2dcf-4ad3-b237-d2fd691b1e72" zeebe:modelerTemplate="io.camunda.connectors.inbound.Slack.MessageStartEvent.v1" />
+  <bpmn:message id="Message_1ej24bd" name="2e3a2e04-13d9-41eb-9259-7df98ec38618" zeebe:modelerTemplate="io.camunda.connectors.inbound.Slack.IntermediateCatchEvent.v1">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=string(slackRequest.threadTs)" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Multi-Channel-Agent">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="172" y="160" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="152" y="203" width="78" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_14an6hl_di" bpmnElement="Event_14an6hl">
+        <dc:Bounds x="972" y="160" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="953" y="203" width="76" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xv48se_di" bpmnElement="Activity_1jbvj8d" isExpanded="true">
+        <dc:Bounds x="350" y="78" width="550" height="492" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1escryq_di" bpmnElement="Activity_1wvern9">
+        <dc:Bounds x="390" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_16s6osi_di" bpmnElement="Activity_1lnicu6">
+        <dc:Bounds x="550" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ell6bz_di" bpmnElement="Activity_07bfoi2">
+        <dc:Bounds x="550" y="270" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0b7ceab_di" bpmnElement="Event_0vckndl">
+        <dc:Bounds x="762" y="292" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="755" y="335" width="50" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_14jk22y_di" bpmnElement="Gateway_000w0oi">
+        <dc:Bounds x="675" y="285" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_12ko9hv_di" bpmnElement="Event_038j3bw">
+        <dc:Bounds x="762" y="402" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="740" y="445" width="82" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_103x5gh_di" bpmnElement="Activity_1ftg0az">
+        <dc:Bounds x="390" y="270" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1bf1sdt_di" bpmnElement="Activity_1wck987">
+        <dc:Bounds x="750" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1t0lbun_di" bpmnElement="Event_13nfdh6">
+        <dc:Bounds x="442" y="332" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_004pm9h_di" bpmnElement="Event_11b0w9b">
+        <dc:Bounds x="612" y="122" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="649" y="114" width="82" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1xv0jz4_di" bpmnElement="Flow_1xv0jz4">
+        <di:waypoint x="650" y="310" />
+        <di:waypoint x="675" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03c6lz8_di" bpmnElement="Flow_03c6lz8">
+        <di:waypoint x="725" y="310" />
+        <di:waypoint x="762" y="310" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1p8hauj_di" bpmnElement="Flow_1p8hauj">
+        <di:waypoint x="700" y="335" />
+        <di:waypoint x="700" y="420" />
+        <di:waypoint x="762" y="420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0k4070y_di" bpmnElement="Event_0kr9ms2">
+        <dc:Bounds x="172" y="292" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="154" y="335" width="77" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0jt0w1f_di" bpmnElement="Flow_0jt0w1f">
+        <di:waypoint x="900" y="178" />
+        <di:waypoint x="972" y="178" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0siqvmv_di" bpmnElement="Flow_0siqvmv">
+        <di:waypoint x="208" y="178" />
+        <di:waypoint x="350" y="178" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1890yp5_di" bpmnElement="Flow_1890yp5">
+        <di:waypoint x="208" y="310" />
+        <di:waypoint x="350" y="310" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

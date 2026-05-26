@@ -1,0 +1,23 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.8.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "80a5306"
+  },
+  "schemaVersion": 19,
+  "id": "get-question-about-tech-stuff-1ibjovl",
+  "components": [
+    {
+      "label": "Question About Tech",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1bsvk1z",
+        "columns": null
+      },
+      "id": "Field_0v7ncyi",
+      "key": "question"
+    }
+  ],
+  "type": "default"
+}
